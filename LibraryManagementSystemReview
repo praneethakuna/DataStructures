@@ -1,0 +1,20 @@
+Users-Admin,Student
+Students-two types(New Student,Already Registered)- Borrow,return books
+Admin- Add new books info,Update Books info
+
+Void InsertNewBook by Admin
+generate book id  as it is new
+no of records 
+any other info
+when admin click add book - the api service calls the insert query to RDBMS
+update book- pass a book id(as info is already present in db) - any info regarding that example-no of copies have increased, or decreased or as such 
+also update works when student borrow or returns a book , reducing the quantity at present in library
+Search book info - which is kind of get call
+
+for student
+before borrowing the book he should check if the book is available if yes request it - like a get call 
+once he borrows book , enter into db with values like particular reg num,time when he borrowed, when should he return,expiry date like how many months he would return it, status like issued 
+and update the quantity of books present in library like by decrement 
+once he returns 
+check if he has crossed the expiry if so calculate fine
+if not just update status as returned and increment the quantity of that particular book present in library
