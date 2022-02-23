@@ -1,0 +1,23 @@
+1.Once you login into app,the user should be able to choose the city,by default based on his last selection or through his gps we can show the default city and he can change the 
+location as well
+2.once he choose city we should show him the list of movies available and the timings and the data what he can choose by default the current date will be selected
+3.once he choose date , the movie and show time show the movie seating arraangement and once user clicks the seats , it will be blocked until the transaction is successful
+and also we show that particular seats are blocked to other user who is looking into the same movie with same date and timing
+4.once click booking it directs to payment gateway where he can choose through what he can pay
+5.once payment is done a booking id with a valid qr code is generated with the movie details displaying also can be sent to email and also via sms stating your booking is confirmed
+
+
+Portal Should server users on first come first server based approach
+
+while payment we have to mainatain ACID compliant and also secure as it contains sensitive data
+storage things
+1.RDBMS- Storing different cities of country, the movies, city areas
+2.Cassandra - for movie reviews, like irrelavant infor like crew members , ratings , comments and stuff
+3.For logging we use ELK - Elastic Search Kibana
+4.Caching like for theater seating arrangement the daily show times-redis,memecache, redis also uses locking mechanism
+5.Loadbalancer -liker round robin , weighted round robin (Just distributing the work equally among the app servers)
+To send pdfs and all we can use msg queues once booking is done however the user doesnt wait for sms or email as he would have already received the qr so we pass the pdf and msgs
+to msg queues so that they deliver it to them
+
+6.analytics
+7.Log managements
